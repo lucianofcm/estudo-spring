@@ -57,11 +57,11 @@ public class SampleController {
 		return this.cityService.findCities(citySearchCriteria, new PageRequest(0, 10));
 	}
 	
-	@RequestMapping("/listaHoteisNY")
+	/*@RequestMapping("/listaHoteisNY")
 	@ResponseBody
 	@Transactional(readOnly = true)
 	public Page<City> listCidadesNY() {
 		citySearchCriteria = new CitySearchCriteria("London");
 		return this.hotelService.(citySearchCriteria, new PageRequest(0, 10));
-	}
+	}*/
 }
