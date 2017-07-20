@@ -10,7 +10,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+	
 /*Exemplos namedQueries
  * @NamedQueries({ @NamedQuery(name = "contarGrupo", query = "select count(id) from GrupoConsultaWS"),
 		@NamedQuery(name = "verificarGrupoExistente", query = "select count(g.id) from GrupoConsultaWS g where g.nome = ? "),
@@ -28,9 +28,9 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "listarNivelSigiloUsuarioUT", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ?"),
-		@NamedQuery(name = "listarSigilo", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ? and nsu.")
-	
+		@NamedQuery(name = "listarNivelSigiloUsuarioUT", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ?")
+		//@NamedQuery(name = "listarSigilo", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ? and nsu.")
+
 })
 @Table(name = "Nivel_Sigilo_Unidade_Tramitadora")
 public class NivelSigiloUnidadeTramitadora  {
