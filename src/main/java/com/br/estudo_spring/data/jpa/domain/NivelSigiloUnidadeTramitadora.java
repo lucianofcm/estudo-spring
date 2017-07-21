@@ -1,5 +1,6 @@
 package com.br.estudo_spring.data.jpa.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -33,7 +34,7 @@ import javax.persistence.Table;
 
 })
 @Table(name = "Nivel_Sigilo_Unidade_Tramitadora")
-public class NivelSigiloUnidadeTramitadora  {
+public class NivelSigiloUnidadeTramitadora implements Serializable  {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -52,10 +53,17 @@ public class NivelSigiloUnidadeTramitadora  {
 	
 	@OneToMany(mappedBy ="nivelSigiloUnidadeTramitadora")
 	private List<NivelSigilo> nivelSigilo;
-
 	
-	public NivelSigiloUnidadeTramitadora() {
-
+	protected NivelSigiloUnidadeTramitadora() {
+	}
+	
+	public NivelSigiloUnidadeTramitadora(Long id, String numPontoUsuario, Long ideGrupo,
+			List<NivelSigilo> nivelSigilo) {
+		super();
+		this.id = id;
+		this.numPontoUsuario = numPontoUsuario;
+		this.ideGrupo = ideGrupo;
+		this.nivelSigilo = nivelSigilo;
 	}
 
 	public long getId() {
