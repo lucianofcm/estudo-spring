@@ -185,6 +185,20 @@ insert into hotel(city_id, name, address, zip) values (21, 'Hotel Rouge', '1315 
 insert into review(hotel_id, index, check_in_date, rating, trip_type, title, details) values (27, 0, '2000-01-29', 0, 2, 'Never again', 'I will never ever stay here again!!  They wanted extra cash to get fresh batteries for the TV remote')
 insert into review(hotel_id, index, check_in_date, rating, trip_type, title, details) values (27, 1, '2006-02-20', 0, 0, 'Avoid', 'This place is the pits, they charged us twice for a single night stay.  I only got refunded after contacting my credit card company.')
 
+
+-- Grupo
+
+INSERT INTO grupo (ide_grupo,nome_grupo) VALUES (289,'Grupo 1')
+INSERT INTO grupo (ide_grupo,nome_grupo) VALUES (290,'Grupo 2')
+INSERT INTO grupo (ide_grupo,nome_grupo) VALUES (291,'Grupo 3')
+INSERT INTO grupo (ide_grupo,nome_grupo) VALUES (292,'Grupo 4')
+
+-- Grupo Gestor
+
+INSERT INTO grupo_gestor (ide_grupo_gestor,ide_grupo) VALUES (1,289)
+INSERT INTO grupo_gestor (ide_grupo_gestor,ide_grupo) VALUES (2,289)
+
+
 -- Nivel Sigilo
 
 INSERT INTO Nivel_Sigilo (ide_nivel_sigilo,nom_nivel_sigilo) VALUES (1,'Grau de Sigilo')
@@ -193,7 +207,8 @@ INSERT INTO Nivel_Sigilo (ide_nivel_sigilo,nom_nivel_sigilo) VALUES (3,'Informa�
 INSERT INTO Nivel_Sigilo (ide_nivel_sigilo,nom_nivel_sigilo) VALUES (4,'Informação Médica')
 INSERT INTO Nivel_Sigilo (ide_nivel_sigilo,nom_nivel_sigilo) VALUES (5,'Fase Interna de Licitação')
 
-
+ -- Nivel Sigilo Unidade Tramitadora
+ 
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (17,'P_7322',289,1)
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (18,'P_7322',289,2)
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (19,'P_7322',289,3)
@@ -203,6 +218,8 @@ INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitado
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (70,'P_7375',290,2)
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (173,'P_7377',290,1)
 INSERT INTO Nivel_Sigilo_Unidade_Tramitadora (ide_nivel_sigilo_unidade_tramitadora,num_ponto_usuario,ide_grupo,ide_nivel_sigilo) VALUES (174,'P_7374',290,1)
+
+
 
 
 

@@ -33,7 +33,7 @@ interface NivelSigiloRepositorio extends Repository<NivelSigiloUnidadeTramitador
 	Page<NivelSigiloUnidadeTramitadora> findByNumPontoUsuario(
 			String numPontoUsuario,  Pageable pageable);
 
-	NivelSigiloUnidadeTramitadora findByNameAndCountryAllIgnoringCase(Long id, String numPontoUsuario, Long ideGrupo,
+	/*NivelSigiloUnidadeTramitadora findByNameAndCountryAllIgnoringCase(Long id, String numPontoUsuario, Long ideGrupo,
 			List<NivelSigilo> nivelSigilo);
-
+*/
 }
