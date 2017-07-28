@@ -7,11 +7,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+import javax.persistence.NamedQuery;	
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-	
+
 /*Exemplos namedQueries
  * @NamedQueries({ @NamedQuery(name = "contarGrupo", query = "select count(id) from GrupoConsultaWS"),
 		@NamedQuery(name = "verificarGrupoExistente", query = "select count(g.id) from GrupoConsultaWS g where g.nome = ? "),
@@ -30,18 +31,18 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "listarNivelSigiloUsuarioUT", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ?")
-		//@NamedQuery(name = "listarSigilo", query = "select nsu from NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and nsu.ideGrupo = ? and nsu.")
+		// @NamedQuery(name = "listarSigilo", query = "select nsu from
+		// NivelSigiloUnidadeTramitadora nsu where nsu.numPontoUsuario = ? and
+		// nsu.ideGrupo = ? and nsu.")
 
 })
 @Table(name = "Nivel_Sigilo_Unidade_Tramitadora")
-public class NivelSigiloUnidadeTramitadora implements Serializable  {
+public class NivelSigiloUnidadeTramitadora implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 
 	@Id
 	@GeneratedValue
-	@Column(name = "ide_nivel_sigilo_unidade_tramitadora")
 	private Long id;
 
 	@Column(name = "num_ponto_usuario", nullable = false)
@@ -50,20 +51,22 @@ public class NivelSigiloUnidadeTramitadora implements Serializable  {
 	@Column(name = "ide_grupo")
 	private Long ideGrupo;
 
-	
-	@OneToMany(mappedBy ="nivelSigiloUnidadeTramitadora")
-	private List<NivelSigilo> nivelSigilo;
-	
+	@ManyToOne(optional = false)
+	private Grupo grupo;
+
+	@ManyToOne(optional = false)
+	private NivelSigilo nivelSigilo;
+
 	protected NivelSigiloUnidadeTramitadora() {
 	}
-	
-	public NivelSigiloUnidadeTramitadora(Long id, String numPontoUsuario, Long ideGrupo,
-			List<NivelSigilo> nivelSigilo) {
+
+	public NivelSigiloUnidadeTramitadora(Long id, String numPontoUsuario, Long ideGrupo,NivelSigilo nivelSigilo) {
 		super();
 		this.id = id;
 		this.numPontoUsuario = numPontoUsuario;
-		this.ideGrupo = ideGrupo;
+		this.ideGrupo = ideGrupo;	
 		this.nivelSigilo = nivelSigilo;
+
 	}
 
 	public long getId() {
@@ -89,12 +92,20 @@ public class NivelSigiloUnidadeTramitadora implements Serializable  {
 	public void setIdeGrupo(Long ideGrupo) {
 		this.ideGrupo = ideGrupo;
 	}
-	
-	public List<NivelSigilo> getNivelSigilo() {
+
+	public Grupo getGrupo() {
+		return grupo;
+	}
+
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
+
+	public NivelSigilo getNivelSigilo() {
 		return nivelSigilo;
 	}
 
-	public void setNivelSigilo(List<NivelSigilo> nivelSigilo) {
+	public void setNivelSigilo(NivelSigilo nivelSigilo) {
 		this.nivelSigilo = nivelSigilo;
 	}
 
